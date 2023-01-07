@@ -1,4 +1,4 @@
-name: Build OpenWRT Package
+name: Build luci-app-xray
 
 on:
   repository_dispatch:
