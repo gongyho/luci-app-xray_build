@@ -18,6 +18,9 @@ env:
   PACKAGE_REPO: https://github.com/yichya/luci-app-xray.git
   PACKAGE_NAME: luci-app-xray
   PACKAGE_BRANCH: master
+  PACKAGE_I18N_REPO: https://github.com/Mitsuhaxy/luci-i18n-xray-zh-cn.git
+  PACKAGE_I18N_NAME: luci-i18n-xray-zh-cn
+  PACKAGE_I18N_BRANCH: main
   # 下方参数保持默认即可
   TZ: Asia/Shanghai
 
@@ -54,6 +57,7 @@ jobs:
       working-directory: /workdir/src
       run: |
         git clone -b $PACKAGE_BRANCH $PACKAGE_REPO package/$PACKAGE_NAME
+        git clone -b $PACKAGE_I18N_BRANCH $PACKAGE_I18N_REPO package/$PACKAGE_I18N_NAME
 
     - name: Update feeds
       run: cd src && ./scripts/feeds update -a
